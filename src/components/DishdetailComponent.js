@@ -10,11 +10,11 @@ class DishDetail extends Component {
         if (dish != null) {
             return (
                 <Card>
-                   <CardImg width="100%" src={dish.image} alt={dish.name} />
-                   <CardBody>
+                    <CardImg width="100%" src={dish.image} alt={dish.name} />
+                    <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
-                   </CardBody> 
+                    </CardBody>
                 </Card>
             );
         }
@@ -26,13 +26,13 @@ class DishDetail extends Component {
     }
 
     renderComments(commentsList) {
-        if(commentsList != null) {
+        if (commentsList != null) {
             const comments = commentsList.map((comment) => {
                 return (
-                <li key={comment.id} className="list-unstyled">
-                    <p>{comment.comment}</p>
-                    <p>--{comment.author}, {comment.date}</p>
-                </li>
+                    <li key={comment.id} className="list-unstyled">
+                        <p>{comment.comment}</p>
+                        <p>--{comment.author}, {comment.date}</p>
+                    </li>
                 );
             });
             return (
@@ -52,16 +52,16 @@ class DishDetail extends Component {
 
     render() {
         if (this.props.selectedDish != null) {
-        return (
-            <div className="row">
-                <div className="col-12 col-md-5 m-1">
-                    {this.renderDish(this.props.selectedDish)}
+            return (
+                <div className="row">
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderDish(this.props.selectedDish)}
+                    </div>
+                    <div className="col-md-5 m-1">
+                        {this.renderComments(this.props.selectedDish.comments)}
+                    </div>
                 </div>
-                <div className="col-md-5 m-1">
-                    {this.renderComments(this.props.selectedDish.comments)}
-                </div>
-            </div>
-        );
+            );
         }
         else {
             return (
