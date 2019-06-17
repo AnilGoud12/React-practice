@@ -19,7 +19,7 @@ class App extends Component {
       <div>
         <Navbar dark color="primary">
           <div className="container">
-            <NavbarBrand href="https://www.linkedin.com/in/anil-bandari-5bba3a179/" target="_blank">React Practice - Anil Goud</NavbarBrand>
+            <NavbarBrand href="https://www.linkedin.com/in/anil-bandari-5bba3a179/" target="_blank">React - Anil Bandari</NavbarBrand>
           </div>
         </Navbar>
         <Menu dishes={this.state.dishes}/>
